@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangun Datar App</title>
+</head>
+<body>
+    <script type="text/javascript" src="bangunDatar2.js"></script>    
+    <script type="text/javascript" src="display.js"></script>
+    
+    <script type="text/javascript">
+        // Pilih bangun datar yang akan dihitung
+
+        // List bangun datar :
+        // 1. persegi, 2. persegi panjang, 3. segitiga, 4. trapesium, 5. jajar genjang, 6. belah ketupat, 7. layang-layang.
+
+        let pilih = Number(prompt("Bangun datar apa yang akan di hitung luas dan kelilingnya? 1. persegi, 2. persegi panjang, 3. segitiga, 4. trapesium, 5. jajar genjang, 6. belah ketupat, 7. layang-layang?"));
+            if (pilih == 1) {
+                let s = Number(prompt("Berapakah nilai sisi dari persegi (cm)?"));
+                let luas = luasPersegi(s);
+                let keliling = kelilingPersegi(s);
+                display(displayModeA, luas, keliling)
+                //alert(`Sisi: ${s} cm\nLuas Persegi: ${luas} cm\u00B2Keliling Persegi: ${keliling} cm`)
+            } else if (pilih == 2) {
+                let p = Number(prompt("Berapakah nilai panjang dari persegi panjang (cm)?"));
+                let l = Number(prompt("Berapakah nilai lebar dari persegi panjang (cm)?"));
+                let luas = luasPersegiPanjang(p,l);
+                let keliling = kelilingPersegiPanjang(p,l);
+                display(displayModeA, luas, keliling)
+                //alert(`Panjang: ${p} cm\nLebar: ${l}\nLuas Persegi Panjang: ${luas} cm\u00B2Keliling Persegi Panjang: ${keliling} cm`)
+            } else if (pilih == 3) {
+                let a = Number(prompt("Berapakah nilai sisi A dari segitiga (cm)?"));
+                let b = Number(prompt("Berapakah nilai sisi B dari segitiga (cm)?"));
+                let c = Number(prompt("Berapakah nilai sisi C dari segitiga (cm)?"))
+                let luas = luasSegitiga(a,b,c);
+                let keliling = kelilingSegitiga(a,b,c);
+                display(displayModeA, luas, keliling)
+                //alert(`Sisi A: ${a} cm\nSisi B: ${b}\nSisi C: ${c} cm\nLuas Segitiga: ${luas}\u00B2Keliling Segitiga: ${keliling} cm`)
+            } else if (pilih == 4) {
+                let a = Number(prompt("Berapakah nilai sisi atas dari trapesium (cm)?"));
+                let b = Number(prompt("Berapakah nilai sisi bawah dari trapesium (cm)?"));
+                let m = Number(prompt("Berapakah nilai sisi miring dari trapesium (cm)?"));
+                let t = Number(prompt("Berapakah nilai tinggi dari trapesium (cm)?"));
+                let luas = luasTrapesium(a,b,m,t);
+                let keliling = kelilingTrapesium(a,b,m,t);
+                display(displayModeA, luas, keliling)
+                //alert(`Sisi Atas: ${a} cm\nsisi Bawah: ${b}\nSisi Miring: ${m} cm\nLuas Trapesium: ${luas}\u00B2Keliling Trapesium: ${keliling} cm`)
+            } else if (pilih == 5) {
+                let ajg = Number(prompt("Berapakah nilai alas dari jajar genjang (cm)?"));
+                let tjg = Number(prompt("Berapakah nilai tinggi dari jajar genjang (cm)?"));
+                let luas = luasJajarGenjang(ajg,tjg);
+                let sm = Number(prompt("Berapakah nilai sisi miring dari jajar genjang (cm)?"));
+                let keliling = kelilingJajarGenjang(ajg,sm);
+                display(displayModeA, luas, keliling)
+                //alert(`Alas Jajar Genjang: ${ajg} cm\nTinggi Jajar Genjang: ${tjg}\nLuas Jajar Genjang: ${luas}\u00B2Keliling Jajar Genjang: ${keliling} cm`)
+            } else if (pilih == 6) {
+                let diag1 = Number(prompt("Berapakah nilai diagonal 1 dari bangun datar belah ketupat (cm)?"));
+                let diag2 = Number(prompt("Berapakah nilai diagonal 2 dari bangun datar belah ketupat (cm)?"));
+                let luas = luasBelahKetupat(diag1,diag2);
+                let sbk = Number(prompt("Berapakah nilai sisi dari bangun datar belah ketupat (cm)?"));
+                let keliling = kelilingBelahKetupat(sbk);
+                display(displayModeA, luas, keliling)
+                //alert(`Diagonal 1: ${diag1} cm\nDiagonal 2: ${diag2}\nSisi Bagun Datar Belah Ketupat: ${sbk}\nLuas Belah Ketupat: ${luas}\u00B2Keliling Belah Ketupat: ${keliling} cm`)
+            } else if (pilih == 7) {
+                let diag1 = Number(prompt("Berapakah nilai diagonal 1 dari bangun datar layang-layang (cm)?"));
+                let diag2 = Number(prompt("Berapakah nilai diagonal 2 dari bangun datar layang-layang (cm)?"));
+                let luas = luasLayangLayang(diag1,diag2);
+                let SL1 = Number(prompt("Berapakah nilai sisi 1 dari bangun datar layang-layang (cm)?"));
+                let SL2 = Number(prompt("Berapakah nilai sisi 2 dari bangun datar layang-layang (cm)?"));
+                let keliling = kelilingLayangLayang(SL1,SL2);
+                display(displayModeA, luas, keliling)
+                //alert(`Diagonal 1: ${diag1} cm\nDiagonal 2: ${diag2}\nSisi LL 1: ${SL1} cm\nSisi LL 2: ${SL2} cm\nLuas Layang-Layang: ${luas}\u00B2\nKeliling Layang-Layang: ${keliling} cm`)
+            } else {
+                alert("Keyword yang anda masukkan tidak sesuai. Pilih keyword angka dari 1-7 sesuai dengan bangun datar yang terdapat pada list.")
+            }
+
+    </script>
+</body>
+</html>
